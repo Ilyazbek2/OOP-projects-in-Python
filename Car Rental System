@@ -1,0 +1,21 @@
+class Car:
+    def __init__(self, brand, model, price_per_day):
+        self.brand = brand
+        self.model = model
+        self.price_per_day = price_per_day
+        self.is_rented = False
+
+    def rent(self, days):
+        if not self.is_rented:
+            self.is_rented = True
+            return f"Rented {self.brand} {self.model} for {days} days. Total: ${days * self.price_per_day}"
+        return f"{self.brand} {self.model} is already rented."
+
+    def return_car(self):
+        self.is_rented = False
+        return f"{self.brand} {self.model} returned."
+
+
+cars = [Car("Toyota", "Camry", 50), Car("Tesla", "Model 3", 120)]
+print(cars[0].rent(3))
+print(cars[0].return_car())
