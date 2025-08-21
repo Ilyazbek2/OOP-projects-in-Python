@@ -1,0 +1,26 @@
+class Pet:
+    def __init__(self, name, species, age):
+        self.name = name
+        self.species = species
+        self.age = age
+
+    def speak(self):
+        return f"{self.name} makes a sound!"
+
+    def __str__(self):
+        return f"{self.name} ({self.species}, {self.age} years old)"
+
+
+class Dog(Pet):
+    def speak(self):
+        return f"{self.name} barks!"
+
+
+class Cat(Pet):
+    def speak(self):
+        return f"{self.name} meows!"
+
+
+pets = [Dog("Buddy", "Dog", 3), Cat("Mittens", "Cat", 2)]
+for pet in pets:
+    print(pet, "-", pet.speak())
