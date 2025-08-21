@@ -1,0 +1,22 @@
+class Student:
+    def __init__(self, name):
+        self.name = name
+        self.grades = []
+
+    def add_grade(self, grade):
+        self.grades.append(grade)
+
+    def average(self):
+        return sum(self.grades) / len(self.grades) if self.grades else 0
+
+    def __str__(self):
+        return f"{self.name} - Avg Grade: {self.average():.2f}"
+
+
+students = [Student("Alice"), Student("Bob")]
+students[0].add_grade(90)
+students[0].add_grade(80)
+students[1].add_grade(75)
+
+for s in students:
+    print(s)
